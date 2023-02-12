@@ -1,24 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ClickCounterAK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Lnc-at-dTe">
+                                <rect key="frame" x="57" y="183.99999999999997" width="279" height="484.33333333333326"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Brp-EE-E64">
+                                        <rect key="frame" x="0.0" y="0.0" width="279" height="400"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="400" id="5sU-iZ-z4s"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="if5-zw-arV">
+                                        <rect key="frame" x="0.0" y="400" width="279" height="84.333333333333314"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGi-XF-wtU">
+                                                <rect key="frame" x="100" y="0.0" width="79" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Restart"/>
+                                                <connections>
+                                                    <action selector="buttonRestartAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zTU-hc-8wF"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pJ-AO-GiO">
+                                                <rect key="frame" x="0.0" y="44.333333333333371" width="279" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="n7w-lw-Uu4"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="CLICK">
+                                                    <color key="baseForegroundColor" systemColor="linkColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Hb-3R-Cwd"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="6pJ-AO-GiO" secondAttribute="trailing" id="9A6-XI-8ji"/>
+                                            <constraint firstItem="jGi-XF-wtU" firstAttribute="top" secondItem="if5-zw-arV" secondAttribute="top" id="Kxu-Ob-bdz"/>
+                                            <constraint firstAttribute="bottom" secondItem="6pJ-AO-GiO" secondAttribute="bottom" id="MZq-LH-SSc"/>
+                                            <constraint firstAttribute="trailing" secondItem="jGi-XF-wtU" secondAttribute="trailing" constant="100" id="ioQ-yX-EEa"/>
+                                            <constraint firstItem="6pJ-AO-GiO" firstAttribute="top" secondItem="jGi-XF-wtU" secondAttribute="bottom" constant="10" id="oPB-8K-mNm"/>
+                                            <constraint firstItem="6pJ-AO-GiO" firstAttribute="leading" secondItem="if5-zw-arV" secondAttribute="leading" id="xxY-Qw-eKa"/>
+                                            <constraint firstItem="jGi-XF-wtU" firstAttribute="leading" secondItem="if5-zw-arV" secondAttribute="leading" constant="100" id="y0a-be-sd7"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Brp-EE-E64" firstAttribute="centerX" secondItem="Lnc-at-dTe" secondAttribute="centerX" id="KXH-e3-SZl"/>
+                                    <constraint firstItem="Brp-EE-E64" firstAttribute="leading" secondItem="Lnc-at-dTe" secondAttribute="leading" id="RX9-kU-47S"/>
+                                    <constraint firstItem="Brp-EE-E64" firstAttribute="top" secondItem="Lnc-at-dTe" secondAttribute="top" id="Vtn-5k-qMm"/>
+                                    <constraint firstAttribute="trailing" secondItem="Brp-EE-E64" secondAttribute="trailing" id="uqb-CS-9B5"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Lnc-at-dTe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sdZ-LN-up3"/>
+                            <constraint firstItem="Lnc-at-dTe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vlx-kH-KDF"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonClickOutlet" destination="6pJ-AO-GiO" id="zrx-U8-abz"/>
+                        <outlet property="buttonRestartOutlet" destination="jGi-XF-wtU" id="gm0-Sh-o78"/>
+                        <outlet property="labelCounter" destination="Brp-EE-E64" id="81M-rn-Chx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138" y="4"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
